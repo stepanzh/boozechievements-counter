@@ -50,6 +50,14 @@ function defineCountHandlersForCheckBox(checkbox, handler){
     }
 }
 
+function syncCardStatus(card, checkbox) {
+  if (checkbox.checked) {
+    card.classList.add("checked");
+  } else {
+    card.classList.remove("checked");
+  }
+}
+
 // ------------------------------ //
 
 {
@@ -73,19 +81,27 @@ function defineCountHandlersForCheckBox(checkbox, handler){
         }
     }
 
-    let cardContainers = document.getElementsByClassName("card-container");
-    for (let i = 0; i < cardContainers.length; i++){
-        let cc = cardContainers[i];
-        let checkbox = cc.getElementsByTagName("input")[0];
-        let counterClass = cc.getElementsByClassName("card")[0].dataset["cardType"];
+    let cards = document.getElementsByClassName("card");
+    for (let i = 0; i < cards.length; i++){
+        let card = cards[i];
+        let checkbox = card.getElementsByTagName("input")[0];
+        let counterClass = card.dataset["cardType"];
+
         let handler = Counters[counterClass];
+
         defineCountHandlersForCheckBox(checkbox, handler);
+
+        // DEBUG.
+        // checkbox.checked = true;
+
         if (checkbox.checked){ // is this slow?
             handler.tick_up();
         }
+        checkbox.addEventListener("change", function () {
+          syncCardStatus(card, this);
+        });
+        syncCardStatus(card, checkbox);
     }
 }
 
 console.log("Оригинал .png:\n'Special for 2ch.hk @2015. Создано Механиком для блага и во имя Легиона при содействии Анонимуса. Версия 3.2, исправленная.'")
-
-
