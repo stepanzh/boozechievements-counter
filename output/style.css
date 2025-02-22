@@ -141,7 +141,8 @@ footer a {
 @media only screen and (hover: none) {
   .card:hover {
     transform: none;
-    box-shadow: inherit;
+    /* same as for .card */
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   }
 }
 
