@@ -128,7 +128,8 @@ footer a {
 }
 
 .card.checked .card__description {
-  font-size: 12px;
+  /* Close to 12px font. */
+  transform: scale(0.76);
 }
 
 .card__title.None::before {content: '❓';}
