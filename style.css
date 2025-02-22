@@ -125,7 +125,7 @@ footer a {
   gap: 4px;
   background: white;
   padding: 16px 32px;
-  min-height: 64px;
+  min-height: 72px;
   border-radius: 5px;
   transition: 0.3s;
   cursor: pointer;
