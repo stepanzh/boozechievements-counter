@@ -22,7 +22,7 @@ function setCounterProperties(node, maxCount, icon){
             get: function() { return this._currentTurns },
             set: function(a) {
                     this._currentTurns = a;
-                    this._icon.style.transform = "translate(-50%,-50%) rotate(" + this._currentTurns + "turn)";
+                    // this._icon.style.transform = "translate(-50%,-50%) rotate(" + this._currentTurns + "turn)";
                  }
         }
     );

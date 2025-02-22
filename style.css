@@ -48,16 +48,47 @@ footer a {
 }
 
 .class-counter {
+  display: grid;
+  grid-template-columns: min 1fr auto 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+    "title title title title"
+    "icon counter countmax fill";
+  column-gap: 4px;
+  align-items: baseline;
   font-size: 18px;
   font-weight: bold;
   padding: 6px 8px;
 }
 
+.class-counter__icon { grid-area: icon; }
+.class-counter__counter { grid-area: counter; }
+.class-counter__counter-max { grid-area: countmax; }
+.class-counter__title { grid-area: title; }
+
+@media only screen and (max-width: 550px){
+  .class-counter {
+     padding: 0px 6px;
+  }
+}
+
+.class-counter__title {
+  font-size: 10px;
+  font-weight: normal;
+  color: #82858e;
+}
+
+.class-counter__icon {
+  padding: 0;
+  margin: 0;
+}
+
 .class-counter__counter-max {
   font-size: 14px;
   font-weight: normal;
-  color: grey;
+  color: #82858e;
 }
+
 
 #collection {
   display: grid;
