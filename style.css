@@ -1,0 +1,154 @@
+body {
+  display: grid;
+  margin: 0;
+  background: #f5f5f6;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  justify-items: center;
+  color: #242528;
+}
+
+header {
+  justify-self: stretch;
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  background: white;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+main {
+  max-width: 1080px;
+  padding-bottom: 64px;
+  margin: 0 24px;
+  margin-top: 48px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+  margin-bottom: 48px;
+  max-width: 320px;
+}
+
+footer a {
+  font-weight: bold;
+  color: #242528;
+}
+
+#statusbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 12px;
+}
+
+.class-counter {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 6px 8px;
+}
+
+.class-counter__counter-max {
+  font-size: 14px;
+  font-weight: normal;
+  color: grey;
+}
+
+#collection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 24px;
+  grid-column-gap: 24px;
+  justify-items: stretch;
+}
+
+@media only screen and (max-width: 1000px){
+  #collection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 750px){
+  main { margin: 16px 0; }
+  #collection {
+    grid-template-columns: auto;
+  }
+}
+
+@media only screen and (max-width: 400px){
+  .class-counter { font-size: 14px; }
+  .class-counter__counter-max { font-size: 12px; }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: white;
+  padding: 16px 32px;
+  min-height: 64px;
+  border-radius: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  transform: scale(1.02, 1.05);
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card.checked {
+  background: #d8ffd8;
+}
+
+.card input { display: none; }
+
+.card__title {
+  display: none;
+  transition: 0.3s;
+}
+
+.card.checked .card__title {
+  display: flex;
+  gap: 4px;
+  font-weight: bold;
+}
+
+.card__description {
+  transition: 0.3s;
+  text-align: center;
+}
+
+.card.checked .card__description {
+  font-size: 12px;
+}
+
+.card__title.None::before {content: '❓';}
+.card__title.adventurer::before {content: '🗺️';}
+.card__title.lover::before {content: '💘';}
+.card__title.esthete::before {content: '🧐';}
+.card__title.fighter::before {content: '🥊';}
+.card__title.leader::before {content: '👑';}
+.card__title.veteran::before {content: '🎖️';}
+.card__title.punk::before {content: '👹';}
+.card__title.frog::before {content: '🐸';}
+.card__title.collector::before {content: '💱';}
+.card__title.acrobat::before {content: '🤸';}
+.card__title.ninja::before {content: '👤';}
+.card__title.alconaut::before {content: '👨‍';}
+.card__title.joker::before {content: '🤡';}
+.card__title.criminal::before {content: '🚔';}
+.card__title.musician::before {content: '🎙️';}
+
+.authors-attribution {
+  font-size: 12px;
+  margin: 24px 0;
+}
